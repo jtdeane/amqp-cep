@@ -72,7 +72,7 @@ public class EventsMessageListener implements MessageListener, MessageLogging {
 			if (cities.contains(location)) {   				
 				alert = true;
 			} else {
-				logger.debug("Message does not require an alert...off into the ether");
+				logger.info("Message does not require an alert...off into the ether");
 			}
 		
 		} catch (UnsupportedEncodingException e) {
