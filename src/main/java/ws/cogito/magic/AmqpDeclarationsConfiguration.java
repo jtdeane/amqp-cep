@@ -126,18 +126,6 @@ public class AmqpDeclarationsConfiguration {
         }};
     }
     
-	@Bean
-	SimpleMessageListenerContainer eventsContainer() {
-		
-		SimpleMessageListenerContainer eventsContainer = 
-				new SimpleMessageListenerContainer();
-		
-		eventsContainer.setConnectionFactory(connectionFactory());
-		eventsContainer.setQueueNames(properties.getEvaluationsQueue());
-		
-		return eventsContainer;
-	}   
-    
     @Bean
 	SimpleMessageListenerContainer eventsContainer(ConnectionFactory connectionFactory, 
 			@Qualifier("eventsMessageListener") MessageListenerAdapter eventsMessageListener) {
